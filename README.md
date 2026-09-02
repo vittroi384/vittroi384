@@ -1,16 +1,16 @@
 <div align="center">
 
-# 안녕하세요, 데이터 엔지니어 전학수입니다 👋
+# 안녕하세요, 개발자 전학수입니다 👋
 
-**흩어진 데이터를 수집·정제·적재해 "바로 쓸 수 있는 형태"로 만드는 파이프라인을 설계하고 운영합니다.**
-백엔드(FastAPI · Spring)까지 직접 구현하며, 데이터가 흐르는 **처음부터 끝까지** 책임지는 일을 좋아합니다.
+**실무의 불편에서 출발해, 설계부터 배포·운영까지 끝까지 책임지는 시스템을 만듭니다.**
+데이터 파이프라인 · 백엔드(FastAPI · Next.js · Spring) · 클라우드(AWS · GCP)를 넘나들며, 실제로 사용되는 도구를 만드는 것을 좋아합니다.
 
 <br/>
 
-![Data Engineering](https://img.shields.io/badge/Focus-Data%20Engineering-4285F4?style=flat-square)
+![Full-Stack](https://img.shields.io/badge/Focus-Full--Stack%20%2B%20Data-4285F4?style=flat-square)
+![Cloud](https://img.shields.io/badge/Cloud-AWS%20·%20GCP-FF9900?style=flat-square)
+![Backend](https://img.shields.io/badge/Backend-FastAPI·Next.js·Spring-009688?style=flat-square)
 ![ETL Pipeline](https://img.shields.io/badge/ETL-Extract·Transform·Load-2088FF?style=flat-square)
-![Cloud Native](https://img.shields.io/badge/Cloud-GCP-34A853?style=flat-square)
-![Backend](https://img.shields.io/badge/Backend-FastAPI·Spring-009688?style=flat-square)
 
 </div>
 
@@ -18,11 +18,10 @@
 
 ## 🧭 About
 
-- 🔧 **데이터 파이프라인 설계·운영**에 집중합니다 — 수집(Extract) → 정제(Transform) → 적재(Load) → 품질검사 → 서빙/시각화의 전 과정.
-- 🛡 **운영을 의식한 엔지니어링**을 지향합니다: 멱등성(UPSERT) · 재시도(exponential backoff) · 동시성 제어(Lock) · 데이터 품질 검증 · 모니터링/로깅.
+- 🔧 **문제 → 시스템**: 수작업으로 굴러가던 업무(강사 정산, 공고 검색, 문서 검색)를 실사용 시스템으로 바꿔 왔습니다. 지금도 회사와 실사용자들이 쓰고 있습니다.
+- 🛡 **운영을 의식한 엔지니어링**: 멱등성(UPSERT) · 재시도(exponential backoff) · 동시성 제어(Lock) · 데이터 품질 검증 · 금액 스냅샷 · 감사 로그.
 - 🧪 **테스트와 문서로 말합니다**: 순수 로직 분리 + 단위 테스트, ADR(Architecture Decision Record)로 설계 결정 기록, v1 → v2 → v3 점진적 고도화.
-- ☁️ **GCP 기반 클라우드 네이티브** 전환에 관심이 많습니다: Cloud Run · BigQuery · Vertex AI · Firestore · Cloud Scheduler.
-- 🤝 데이터의 **소비처(REST API · RAG · 웹앱)까지** 백엔드로 직접 구현해, 데이터 흐름을 한 줄기로 다룹니다.
+- ☁️ **클라우드 네이티브**: AWS(EC2 · RDS · S3) 배포 구성과 GCP(Cloud Run · Vertex AI · BigQuery · Firestore) 서버리스 백엔드를 직접 설계·운영합니다.
 
 ---
 
@@ -31,133 +30,105 @@
 **Languages**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-025E8C?style=flat-square&logo=postgresql&logoColor=white)
 
-**Data & ETL**
+**Backend & Frontend**
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React%2019-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![Drizzle ORM](https://img.shields.io/badge/Drizzle%20ORM-C5F74F?style=flat-square&logo=drizzle&logoColor=black)
+
+**Cloud & Infra**
+
+![AWS](https://img.shields.io/badge/AWS-EC2·RDS·S3-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/GCP-Cloud%20Run·Vertex%20AI·BigQuery-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+**Data & AI**
 
 ![ETL](https://img.shields.io/badge/ETL%20Pipeline-2088FF?style=flat-square)
 ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat-square&logo=googleappsscript&logoColor=white)
-![Looker Studio](https://img.shields.io/badge/Looker%20Studio-4285F4?style=flat-square&logo=looker&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-Vertex%20AI%20Search·Gemini-673AB7?style=flat-square)
 ![Data Quality](https://img.shields.io/badge/Data%20Quality-00897B?style=flat-square)
-
-**Cloud — Google Cloud Platform**
-
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-![Cloud Run](https://img.shields.io/badge/Cloud%20Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-![BigQuery](https://img.shields.io/badge/BigQuery-669DF6?style=flat-square&logo=googlebigquery&logoColor=white)
-![Vertex AI](https://img.shields.io/badge/Vertex%20AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-![Firestore](https://img.shields.io/badge/Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-
-**Backend**
-
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
-![MyBatis](https://img.shields.io/badge/MyBatis-DC382D?style=flat-square)
-![eGovFrame](https://img.shields.io/badge/전자정부%20표준%20프레임워크-003876?style=flat-square)
-
-**Database & Infra**
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-
-> 🌱 **학습/관심**: Airflow · dbt · Great Expectations · Terraform — 직접 만든 파이프라인의 각 단계를 실무 표준 도구로 옮기는 중입니다.
 
 ---
 
 ## 🚀 주요 프로젝트
 
-데이터 파이프라인을 중심으로, 그 데이터를 소비하는 백엔드/웹앱/AI 까지 다룹니다.
+### 1. 💰 TutorPay — 강사 배정·급여정산 시스템 *(사내 실사용)*
 
-### 1. 🍽️ 급식 알레르기 판별 시스템 — 서버리스 웹앱 *(실운영 중)*
+> 구글 시트로 관리하던 **강사 100여 명·연 수백 건 강의**의 배정·단가 계산·월별 정산·통합보고서를 웹앱으로 이전. **AWS(EC2 + Docker Compose + RDS 옵션) 배포 구성.**
 
-> **NEIS 급식 식단을 매일 자동 동기화해 학생 알레르기와 대조하고, 담당자·학부모 알림과 웹앱·전광판까지 제공.** Google Apps Script + Sheets 만으로 서버·비용 없이 운영되는 풀스택 시스템.
-
-- **핵심 엔지니어링**
-  - **동기화 파이프라인**: NEIS Open API → 파싱·정규화 → 변경분만 교체(diff 계획), 사람이 고친 데이터는 **수동 보호**로 덮어쓰지 않음
-  - **테스트 가능한 구조**: 판별·검증·diff 를 순수 로직(core)으로 분리 — Apps Script 없이 **node:test 76건**으로 검증
-  - **알림 시스템**: 이메일·텔레그램·문자(알리고)를 **채널 플러그인 구조**로, 발송 중복키·실패 로그·재시도
-  - **운영 UX**: SPA 웹앱(대시보드·달력·인쇄), 급식실 전광판 모드(자동 배율·페이지 전환), xlsx 일괄 업로드
-- **Stack**: `Google Apps Script` `Google Sheets` `NEIS Open API` `HtmlService SPA` `node:test` `clasp`
-- 👤 **역할**: 단독 설계·개발·운영 · 🔗 [`meal-allergen-checker`](https://github.com/vittroi384/meal-allergen-checker)
+- **금액 스냅샷 설계** — 단가표가 개정돼도 확정된 강의 금액은 불변. 단가표는 시행일 기반 버전 테이블로 관리
+- **급여 규칙의 마이그레이션화** — 요율 개편(차시 구간·지역 특례)을 멱등 SQL 마이그레이션으로 추적
+- **시트 → DB 이전 파이프라인** — 추출 스크립트가 시트 캐시값과 재계산 값을 대조해 불일치 자동 검증
+- **Stack**: `Next.js 15` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL` `Docker` `Caddy` `AWS`
+- 👤 단독 설계·개발·운영 · 🔗 [`tutor-pay`](https://github.com/vittroi384/tutor-pay)
 
 <br/>
 
-### 2. 📊 실시간 암호화폐 데이터 파이프라인 + 자동매매 봇
+### 2. 🤖 Drive RAG 챗봇 — 사내 문서 기반 질의응답 *(GCP)*
 
-> **업비트 시세를 수집 → 저장 → 가공 → 품질검사 → 분석/시각화하는 ETL 파이프라인.** 별도 인프라 없이 Python + SQLite 단일 노드로 동작하도록 설계.
+> **사내 Google Drive / GCS 문서를 근거로만 답변하는 RAG 챗봇.** 환각을 줄이는 검증 파이프라인에 초점을 둔 클라우드 네이티브 백엔드.
 
-- **핵심 엔지니어링**
-  - **멱등 수집**: UPSERT 로 캔들 적재 → 재실행해도 중복 없음
-  - **변환**: 원본 시세에서 지표 계산(이동평균 · RSI · 볼린저 · 일목) 후 별도 테이블 적재
-  - **데이터 품질검사**: 빠진 봉 · 결측치 · 신선도 점검 → 이상 시 텔레그램 알림
-  - **오케스트레이션**: 수집→가공→품질을 순서대로(DAG 형태) 주기 실행 + 실패 처리·로깅
-  - **서빙/운영**: matplotlib 리포트 · Flask 대시보드 · systemd 24시간 무중단 · GitHub Actions CI
-- **설계 관점**: 각 단계를 실무 도구와 **1:1로 매핑**해 설계 — SQLite↔TimescaleDB, 오케스트레이터↔Airflow, 변환↔dbt, 품질검사↔Great Expectations, 리포트↔Grafana
-- **Stack**: `Python` `SQLite` `pandas` `matplotlib` `Flask` `systemd` `GitHub Actions`
-- 👤 **역할**: 단독 설계·개발 · 🔗 [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot)
+- **하이브리드 검색**: 공용 문서(Vertex AI Search) + 개인 문서(OAuth Drive) 동시 검색
+- **RAG 파이프라인**: 후보 top-20 → Gemini re-rank top-5 → 생성 → **답변 검증 레이어**
+- **검색 백엔드 추상화**: ABC 인터페이스 뒤로 구현 은닉 → 백엔드 교체를 설정 한 줄로
+- **엔지니어링**: ADR 13편 · Firestore(대화)/BigQuery(분석) 분리 · pytest · ruff · mypy(strict) · Cloud Run/IAP 배포
+- **Stack**: `FastAPI` `Python 3.11 (async)` `Vertex AI` `Gemini` `Firestore` `BigQuery` `Docker` `Cloud Run`
+- 👤 단독 설계·개발 · 🔗 [`drive-chatbot`](https://github.com/vittroi384/drive-chatbot)
 
 <br/>
 
 ### 3. 🏛 입찰공고 자동화·시각화 ETL 파이프라인 *(사내 운영 중)*
 
-> **6개 정부 부처/기관**(조달청 · 기업마당 · 보조금24 · e나라도움 · K-Startup · KOCCA)의 입찰/지원사업 공고를 자동 수집·정제·시각화하는 **사내 ETL 파이프라인(v2.0)**. 현재 영업팀이 실사용 중.
+> **6개 정부 부처/기관**(조달청 · 기업마당 · 보조금24 · e나라도움 · K-Startup · KOCCA)의 공고를 자동 수집·정제·시각화. 영업팀 실사용 — 수동 검색 **일 1~2시간 → 0시간**.
 
-- **핵심 엔지니어링**
-  - **Extract**: 6개 공공 Open API 를 6시간 주기로 호출, API 장애 시 트랙별 격리 + exponential backoff 재시도
-  - **Transform**: 기관별 제각각인 필드명·날짜 포맷을 **단일 스키마로 정규화**, 키워드 필터링 + 카테고리 자동 태깅, Set 기반 중복 제거
-  - **Load**: Google Sheets **Batch Insert(setValues)** 로 일괄 적재 → 반복 쓰기 대비 실행 시간 단축
-  - **운영 안정화**: 자격증명 분리(`PropertiesService`) · 트리거 중복 실행 방지(`LockService`) · 90일 경과 데이터 자동 정리 · 실행 로그 모니터링
-- **성과**: 영업팀 수동 검색 시간 **일 1~2시간 → 0시간**, 누락 공고 차단으로 신규 수주 기회 확대
-- **진화**: v1.0 → v2.0 점진적 고도화 / **v3.0 계획** — Cloud Run(FastAPI) · Cloud Scheduler · BigQuery 로 클라우드 네이티브 이전
-- **Stack**: `Google Apps Script` `Google Sheets` `Looker Studio` `REST API`
-- 👤 **역할**: 단독 기획·개발·운영 · 🔒 *비공개 저장소 (요청 시 공유)*
+- 6개 공공 Open API 6시간 주기 호출, 장애 시 트랙별 격리 + exponential backoff 재시도
+- 기관별 상이한 필드·날짜 포맷을 **단일 스키마로 정규화**, 키워드 필터 + 카테고리 자동 태깅
+- Batch Insert 일괄 적재 · 자격증명 분리 · Lock 으로 중복 실행 방지 · 90일 자동 정리
+- **Stack**: `Google Apps Script` `Google Sheets` `Looker Studio` `REST API` · 👤 단독 기획·개발·운영 · 🔒 *비공개 (요청 시 공유)*
 
 <br/>
 
-### 4. 🤖 Drive RAG 챗봇 — 사내 문서 기반 질의응답
+### 4. 📊 실시간 암호화폐 데이터 파이프라인 + 자동매매 봇
 
-> **사내 Google Drive / GCS 문서를 근거로만 답변하는 RAG 챗봇.** "없는 내용 지어내기(환각)"를 줄이는 데 초점을 둔 클라우드 네이티브 백엔드.
+> 업비트 시세를 **수집 → 저장 → 가공 → 품질검사 → 시각화**하는 ETL 파이프라인. 인프라 없이 Python + SQLite 단일 노드, 24시간 무중단 운영.
 
-- **핵심 엔지니어링**
-  - **하이브리드 검색**: 공용 문서(Vertex AI Search) + 개인 문서(OAuth Drive)를 함께 검색
-  - **검색 백엔드 추상화**: `DocumentSearchService` ABC 뒤로 구현을 은닉 → 백엔드 교체를 **설정 한 줄**로 처리
-  - **RAG 파이프라인**: 후보 top-20 → Gemini re-rank top-5 → 생성 → **답변 검증 레이어**
-  - **데이터 분리**: Firestore(실시간 대화) + BigQuery(분석) / **ADR 13편 기반 설계** · rate limit · OAuth 2.0 · pytest · ruff · mypy · CI
-- **Stack**: `FastAPI` `Python 3.11 (async)` `Vertex AI` `Gemini` `Firestore` `BigQuery` `Docker` `Cloud Run`
-- 👤 **역할**: 단독 설계·개발 · 🔒 *비공개 저장소 (요청 시 공유)*
+- 멱등 수집(UPSERT) · 지표 변환(MA·RSI·볼린저·일목) · 품질검사(결측·신선도) 이상 시 텔레그램 알림
+- 각 단계를 실무 도구와 1:1 매핑 설계 — 오케스트레이터↔Airflow, 변환↔dbt, 품질검사↔Great Expectations
+- 웹 대시보드(Flask) · systemd · GitHub Actions CI
+- **Stack**: `Python` `SQLite` `pandas` `matplotlib` `Flask` · 👤 단독 설계·개발 · 🔗 [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot)
 
 <br/>
 
 ### 5. 🏭 KOSHA 작업환경 종합관리 플랫폼 — 공공 SI *(운영 중)*
 
-> **한국산업안전보건공단(KOSHA) 발주** 공공 SI 사업 — IoT 기반 화학물질 노출·실내 공기질 실시간 모니터링 플랫폼. SI 기업 소속으로 참여해 **4개 모듈을 화면부터 DB까지 풀스택 구현**.
+> **한국산업안전보건공단(KOSHA) 발주** 공공 SI — IoT 기반 화학물질 노출·실내 공기질 모니터링 플랫폼. SI 기업 소속으로 참여해 **4개 모듈을 화면부터 DB까지 풀스택 구현**.
 
-- **담당 모듈**: 공지사항 · 자료실 · 팝업관리 · **환기수준 모니터링**(사업장별 IoT 센서 데이터 조회)
-- **작업 범위**: Java MVC + Spring(Controller/Service/VO/DTO) · MyBatis 쿼리(페이지네이션·검색) · Xframe5 화면 + 반응형 변환 · 첨부파일 처리
-- **트러블슈팅**: 문서가 부족한 Xframe5 HTML 에디터의 저장 방식을 디버깅으로 규명해 기능 완성
-- **환경**: 폐쇄망(SVN · 망분리) 환경에서 7개월 수행
-- **Stack**: `Java` `Spring` `MyBatis` `PostgreSQL` `Xframe5` `전자정부 표준 프레임워크`
-- 👤 **역할**: 풀스택(4개 모듈) · 🔗 [운영 사이트](https://chemsol.kosha.or.kr/)
+- 담당: 공지사항 · 자료실 · 팝업관리 · **환기수준 모니터링**(IoT 센서 데이터 조회)
+- Java MVC + Spring · MyBatis(페이지네이션·검색) · Xframe5 화면 + 반응형 변환 · 폐쇄망(SVN) 환경 7개월
+- **Stack**: `Java` `Spring` `MyBatis` `PostgreSQL` `전자정부 표준 프레임워크` · 🔗 [운영 사이트](https://chemsol.kosha.or.kr/)
 
 ---
 
-## 🧰 작은 도구들
+## 🧰 그 외 프로젝트
 
-실생활의 불편을 바로 해결하는 유틸리티도 만들어 씁니다.
-
-| 도구 | 설명 |
+| 프로젝트 | 설명 |
 |---|---|
-| [`file-auto-sort`](https://github.com/vittroi384/file-auto-sort) | 폴더를 실시간 감시해 파일명 규칙으로 자동 분류하는 Windows 트레이 유틸 — 연습 모드·되돌리기 등 안전장치 우선 (Python) |
-| [`script-to-speech`](https://github.com/vittroi384/script-to-speech) | 대본 txt 각 줄을 순서대로 mp3 로 변환하는 데스크톱 TTS — 무료(edge-tts)/유료(ElevenLabs) 2종, 이어하기 (Python) |
-| [`oci-arm-grab`](https://github.com/vittroi384/oci-arm-grab) | OCI 무료 ARM 인스턴스를 잡을 때까지 자동 재시도하는 GitHub Actions 워크플로 + 텔레그램 알림 |
+| [`fine`](https://github.com/vittroi384/fine) | 벌금형 소셜 습관 챌린지 앱 MVP — Expo(React Native) + Supabase(RLS·Edge Functions·pg_cron), 스펙 문서·SQL 테스트 포함 |
+| [`meal-allergen-checker`](https://github.com/vittroi384/meal-allergen-checker) | 학교 급식 알레르기 자동 판별·알림 시스템 — NEIS 연동, 서버리스(Apps Script), node:test 76건 |
+| [`file-auto-sort`](https://github.com/vittroi384/file-auto-sort) | 폴더 실시간 감시 파일 자동 분류 Windows 트레이 유틸 — 연습 모드·되돌리기 등 안전장치 우선 |
+| [`script-to-speech`](https://github.com/vittroi384/script-to-speech) | 대본 txt → 순서대로 mp3 변환 데스크톱 TTS (edge-tts/ElevenLabs 2종) |
+| [`oci-arm-grab`](https://github.com/vittroi384/oci-arm-grab) | 클라우드 무료 인스턴스 확보 자동 재시도 GitHub Actions 워크플로 |
 
 ---
 
@@ -178,5 +149,5 @@
 - 📝 **Portfolio (Notion)**: https://app.notion.com/p/63f54254ed7848c989b11034b3173e96
 
 <div align="center">
-<sub>데이터의 처음부터 끝까지 — 수집하고, 정제하고, 흐르게 만듭니다.</sub>
+<sub>문제를 발견하고, 시스템으로 만들고, 끝까지 운영합니다.</sub>
 </div>
