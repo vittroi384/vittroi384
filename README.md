@@ -8,7 +8,7 @@
 <br/>
 
 ![Full-Stack](https://img.shields.io/badge/Focus-Full--Stack%20%2B%20Data-4285F4?style=flat-square)
-![Cloud](https://img.shields.io/badge/Cloud-AWS%20·%20GCP-FF9900?style=flat-square)
+![Cloud](https://img.shields.io/badge/Cloud-AWS%20·%20GCP%20·%20Supabase-FF9900?style=flat-square)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI·Next.js·Spring-009688?style=flat-square)
 ![ETL Pipeline](https://img.shields.io/badge/ETL-Extract·Transform·Load-2088FF?style=flat-square)
 
@@ -18,7 +18,7 @@
 
 ## About
 
-- 🔧 **문제 → 시스템**: 수작업으로 굴러가던 업무(강사 정산, 공고 검색, 문서 검색)를 실사용 시스템으로 바꿔 왔습니다. 지금도 회사와 실사용자들이 쓰고 있습니다.
+- 🔧 **문제 → 시스템**: 수작업으로 굴러가던 업무(강사 정산, 공고 검색, 문서 검색, 행사 부스 체험 확인)를 실사용 시스템으로 바꿔 왔습니다. 지금도 회사와 실사용자들이 쓰고 있습니다.
 - 🛡 **운영을 의식한 엔지니어링**: 멱등성(UPSERT) · 재시도(exponential backoff) · 동시성 제어(Lock) · 데이터 품질 검증 · 금액 스냅샷 · 감사 로그.
 - 🧪 설계 결정을 기록합니다: 주요 아키텍처 결정은 ADR로 남기고, 순수 로직은 분리해서 테스트 가능하게 유지합니다. v1 → v2 → v3 점진적 고도화.
 - ☁️ **클라우드 네이티브**: AWS(EC2 · RDS · S3) 배포 구성과 GCP(Cloud Run · Vertex AI · BigQuery · Firestore) 서버리스 백엔드를 직접 설계·운영합니다.
@@ -90,7 +90,20 @@
 
 <br/>
 
-### 3. 입찰공고 자동화·시각화 ETL 파이프라인 *(사내 운영 중)*
+### 3. 부스 QR 스탬프 랠리 — 행사 방문객 앱 + 운영 대시보드 *(배포 완료, 행사 투입 예정)*
+
+> 교육청 주최 수학·과학 축전(**부스 95개 · 하루 최대 5만 명**)용 웹앱. 부스마다 인력을 두는 대신 **고정 QR + 서버 검증(토큰·시간 간격)** 으로 도장을 찍고, 완주하면 앱 안에서 설문 → 교환권 → 운영본부 수령까지 한 흐름. 운영본부는 15초 갱신 대시보드로 현장을 본다.
+
+- **Auth 없이 anon 키 하나 + RPC 권한 모델** — 개인정보 테이블은 RLS 정책 없이 `security definer` RPC 로만 접근, 관리자는 비밀번호 해시 검사 뒤에서만
+- **치팅 방지는 서버에서** — QR 마다 비밀 토큰, 같은 사람 도장 간격 90초. 링크를 공유받아도 이득이 없게
+- **오프라인 큐** — 운동장 통신 불안정 대비, 전송 실패·타임아웃 시 폰에 저장 후 자동 재전송. 서버 거절과 통신 실패를 구분
+- **검증**: Playwright e2e 3벌 · 폭주 테스트 800명 동시 에러 0 · **지속 테스트 초당 4명 × 10분 = 11,558 요청 에러 0, p95 64ms** (Supabase 무료 플랜)
+- **Stack**: `Vanilla JS (단일 HTML)` `Supabase (Postgres · PostgREST · RPC · RLS)` `Vercel` `Playwright` · 운영비 0원
+- 👤 단독 설계·개발·테스트·배포 · 🔗 [`wonju-stamp-rally`](https://github.com/vittroi384/wonju-stamp-rally) *(부스·기관명은 더미 데이터)*
+
+<br/>
+
+### 4. 입찰공고 자동화·시각화 ETL 파이프라인 *(사내 운영 중)*
 
 > **6개 정부 부처/기관**(조달청 · 기업마당 · 보조금24 · e나라도움 · K-Startup · KOCCA)의 공고를 자동 수집·정제·시각화. 영업팀 실사용 — 수동 검색 **일 1~2시간 → 0시간**.
 
@@ -101,7 +114,7 @@
 
 <br/>
 
-### 4. 실시간 암호화폐 데이터 파이프라인 + 자동매매 봇
+### 5. 실시간 암호화폐 데이터 파이프라인 + 자동매매 봇
 
 > 업비트 시세를 **수집 → 저장 → 가공 → 품질검사 → 시각화**하는 ETL 파이프라인. 인프라 없이 Python + SQLite 단일 노드, 24시간 무중단 운영.
 
@@ -112,7 +125,7 @@
 
 <br/>
 
-### 5. KOSHA 작업환경 종합관리 플랫폼 — 공공 SI *(운영 중)*
+### 6. KOSHA 작업환경 종합관리 플랫폼 — 공공 SI *(운영 중)*
 
 > **한국산업안전보건공단(KOSHA) 발주** 공공 SI — IoT 기반 화학물질 노출·실내 공기질 모니터링 플랫폼. SI 기업 소속으로 참여해 **4개 모듈을 화면부터 DB까지 풀스택 구현**.
 
