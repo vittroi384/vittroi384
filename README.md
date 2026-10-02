@@ -97,8 +97,9 @@
 - **저장 시점에만 기록** — 입력 중 전송 없이 PNG/SVG/복사/인쇄/ZIP 클릭에서만 1건. Wi-Fi 비밀번호는 클라이언트·서버 양쪽에서 `****` 고정 마스킹
 - **관리자 3중 잠금** — `/admin`은 일반 404와 동일 응답, 비밀 입구 URL(서명 게이트 쿠키) + RFC 6238 TOTP 직접 구현(재사용 차단) + IP 허용목록, `__Host-` 세션·UA 지문
 - **일괄 생성·인쇄** — 엑셀 붙여 넣기 → PNG ZIP(의존성 없는 ZIP 작성기), A4 인쇄 안내판. QR 비트맵은 모듈당 정수 픽셀로 보정
-- **검증** — 검증 전담 에이전트 리뷰 6차(차단 → 수정 필요 → 통과), node:test 34건 + Playwright E2E 24건(a11y 포함), Lighthouse 98/100/100/100, GitHub Actions CI(lint·types·tests·build → E2E+Postgres → Docker), ADR 6편
-- **Stack**: `Next.js 16` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL 16` `Docker` `Caddy` `Oracle Cloud` `GitHub Actions`
+- **분석·운영** — 관리자 통계(언어·페이지·종류별 저장, 선택→미리보기→저장 퍼널; 개인정보 없는 카운터), 입력 기록 자동 분류(도메인·플랫폼·방문자 언어)·요약, **Umami 자체 호스팅**(쿠키 없음 → 동의 배너 불필요, 대시보드는 SSH 터널로만·공개 경로는 추적 스크립트 2개뿐), 브라우저 오류 수집, 로그 로테이션
+- **검증** — 검증 전담 에이전트 리뷰 8차(차단 → 수정 필요 → 통과), node:test 52건 + Playwright E2E 24건(a11y 포함), Lighthouse 98/100/100/100, GitHub Actions CI(lint·types·tests·build → E2E+Postgres → Docker), ADR 7편
+- **Stack**: `Next.js 16` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL 16` `Umami` `Docker` `Caddy` `Oracle Cloud` `GitHub Actions`
 - 👤 단독 설계·개발·배포 · 🔗 [`qr-web`](https://github.com/vittroi384/qr-web)
 
 <br/>
