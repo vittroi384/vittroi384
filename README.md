@@ -89,15 +89,15 @@
 
 <br/>
 
-### 3. QR Maker — 무엇이든 QR 코드로 바꾸는 무료 생성기 *(영문 공개 서비스, Oracle Cloud 배포)*
+### 3. QR Maker — 무엇이든 QR 코드로 바꾸는 무료 생성기 *(9개 언어 공개 서비스, Oracle Cloud 배포)*
 
-> URL·SNS·WhatsApp·Wi-Fi·연락처·결제 링크 등 **14종을 정적 QR**로 만드는 웹서비스. 시장의 "동적 QR + 구독" 모델을 의도적으로 배제하고, 수익은 AdSense·유입은 **타입별 SEO 랜딩 28페이지**로 가져가는 구조. 운영비 0원(무료 티어).
+> URL·SNS·WhatsApp·Wi-Fi·연락처·결제 링크 등 **14종을 정적 QR**로 만드는 웹서비스. 시장의 "동적 QR + 구독" 모델을 의도적으로 배제하고, 수익은 AdSense·유입은 **9개 언어 × 19종 SEO 랜딩 171페이지**(영어 기본, 한·스페인·포르투갈·독일·프랑스·일본·힌디·인도네시아어는 언어별로 새로 쓴 본문)로 가져가는 구조. 운영비 0원(무료 티어).
 
 - **정적 QR 원칙** — QR에 사용자 내용만 담아 인쇄물이 서버 가동에 종속되지 않음. 리다이렉트·추적·단축 URL 없음 (ADR로 기록)
 - **저장 시점에만 기록** — 입력 중 전송 없이 PNG/SVG/복사/인쇄/ZIP 클릭에서만 1건. Wi-Fi 비밀번호는 클라이언트·서버 양쪽에서 `****` 고정 마스킹
 - **관리자 3중 잠금** — `/admin`은 일반 404와 동일 응답, 비밀 입구 URL(서명 게이트 쿠키) + RFC 6238 TOTP 직접 구현(재사용 차단) + IP 허용목록, `__Host-` 세션·UA 지문
 - **일괄 생성·인쇄** — 엑셀 붙여 넣기 → PNG ZIP(의존성 없는 ZIP 작성기), A4 인쇄 안내판. QR 비트맵은 모듈당 정수 픽셀로 보정
-- **검증** — 검증 전담 에이전트 리뷰 5차(차단 → 수정 필요 → 통과), node:test 30건, GitHub Actions CI, ADR 6편
+- **검증** — 검증 전담 에이전트 리뷰 6차(차단 → 수정 필요 → 통과), node:test 34건 + Playwright E2E 24건(a11y 포함), Lighthouse 98/100/100/100, GitHub Actions CI(lint·types·tests·build → E2E+Postgres → Docker), ADR 6편
 - **Stack**: `Next.js 16` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL 16` `Docker` `Caddy` `Oracle Cloud` `GitHub Actions`
 - 👤 단독 설계·개발·배포 · 🔗 [`qr-web`](https://github.com/vittroi384/qr-web)
 
