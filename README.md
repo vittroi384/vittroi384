@@ -54,6 +54,7 @@
 - **검증**: 시트 558건 재계산 대조 불일치 0, 단위 테스트 43건 + 통합 테스트(단언 68), GitHub Actions에서 빈 DB 생성·재실행 멱등·시드·통합 테스트
 - **Stack**: `Next.js 15` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL` `Docker` `Caddy` `AWS`
 - 단독 설계·개발·운영 · 저장소: [`tutor-pay`](https://github.com/vittroi384/tutor-pay)
+- **REST 재구현** [`tutorpay-api-nest`](https://github.com/vittroi384/tutorpay-api-nest) — 정산 핵심을 NestJS + TypeORM 으로 다시 짠 API. DTO 검증·오류 봉투·OpenAPI, 정산 잠금과 쓰기를 advisory lock 으로 직렬화(원본의 알려진 한계 해결), 단위 32 + e2e 13(동시성 포함), CI, ADR 3
 
 <br/>
 
