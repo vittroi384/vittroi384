@@ -31,7 +31,7 @@
 **Backend & Frontend**
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
 
 **Infra**
@@ -106,7 +106,7 @@
 - **검색 백엔드**: Vertex AI Search(공용 문서) + Drive 파일명 검색(로컬 OAuth 한정, 운영은 Vertex 단독)
 - **RAG 파이프라인**: 후보 백엔드당 10 → Gemini 재정렬 top-5 → 생성 → **grounded 플래그 기록**
 - **검색 백엔드 추상화**: ABC 인터페이스 뒤로 구현 은닉 → 백엔드 교체를 설정 한 줄로
-- **엔지니어링**: ADR 9편 · Firestore(대화 저장) · pytest · ruff · mypy · Cloud Run/IAP/Secret Manager 배포
+- **엔지니어링**: ADR 12편 · Firestore(대화 저장) · pytest · ruff · mypy · Cloud Run/IAP/Secret Manager 배포
 - **검증**: 답변마다 근거 문서 링크 제시. 정량 평가(Recall@5·MRR)는 골든셋 구축 후 예정
 - **Stack**: `FastAPI` `Python 3.11 (async)` `Vertex AI` `Gemini` `Firestore` `Docker` `Cloud Run`
 - 단독 설계·개발 · 저장소: [`drive-chatbot`](https://github.com/vittroi384/drive-chatbot)
