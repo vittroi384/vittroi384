@@ -134,21 +134,11 @@
 
 <br/>
 
-### 실시간 암호화폐 데이터 파이프라인 + 자동매매 봇
-
-> 업비트 시세를 **수집 → 저장 → 가공 → 품질검사 → 시각화**하는 ETL 파이프라인. 인프라 없이 Python + SQLite 단일 노드, systemd로 DRY_RUN 모의매매 운영.
-
-- 멱등 수집(UPSERT) · 지표 변환(MA·RSI·볼린저·일목) · 품질검사(결측·신선도) 이상 시 텔레그램 알림
-- 각 단계를 실무 도구와 1:1 매핑 설계 — 오케스트레이터↔Airflow, 변환↔dbt, 품질검사↔Great Expectations
-- 웹 대시보드(Flask) · systemd · GitHub Actions CI
-- **Stack**: `Python` `SQLite` `pandas` `matplotlib` `Flask` · 단독 설계·개발 · 저장소: [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot)
-
----
-
 ## 그 외 프로젝트
 
 | 프로젝트 | 설명 |
 |---|---|
+| [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot) | 업비트 시세 수집(UPSERT)→지표→품질검사 파이프라인 + 규칙 매매봇(DRY_RUN) — Python + SQLite 단일 노드, systemd. 학습·실험용 |
 | [`fine`](https://github.com/vittroi384/fine) | 벌금형 소셜 습관 챌린지 앱 MVP — Expo(React Native) + Supabase(RLS·Edge Functions·pg_cron), 스펙 문서·SQL 테스트 포함 |
 | [`file-auto-sort`](https://github.com/vittroi384/file-auto-sort) | 폴더 실시간 감시 파일 자동 분류 Windows 트레이 유틸 — 연습 모드·되돌리기 등 안전장치 우선 |
 | [`oci-arm-grab`](https://github.com/vittroi384/oci-arm-grab) | 클라우드 무료 인스턴스 확보 자동 재시도 GitHub Actions 워크플로 |
