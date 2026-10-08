@@ -107,7 +107,7 @@
 - **RAG 파이프라인**: 후보 백엔드당 10 → Gemini 재정렬 top-5 → 생성 → **grounded 플래그 기록**
 - **검색 백엔드 추상화**: ABC 인터페이스 뒤로 구현 은닉 → 백엔드 교체를 설정 한 줄로
 - **엔지니어링**: ADR 12편 · Firestore(대화 저장) · pytest · ruff · mypy · Cloud Run/IAP/Secret Manager 배포
-- **검증**: 답변마다 근거 문서 링크 제시. 정량 평가(Recall@5·MRR)는 골든셋 구축 후 예정
+- **검증**: 답변마다 근거 문서 링크 제시. 품질 평가는 골든셋 20문항 초안과 지표(Recall@5·답변 정확도·grounded 일치율) 정의까지(`docs/eval`), 측정은 예정
 - **Stack**: `FastAPI` `Python 3.11 (async)` `Vertex AI` `Gemini` `Firestore` `Docker` `Cloud Run`
 - 단독 설계·개발 · 저장소: [`drive-chatbot`](https://github.com/vittroi384/drive-chatbot)
 
