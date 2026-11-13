@@ -57,7 +57,7 @@
 - **검증**: 시트 558건 재계산 대조 불일치 0, 명세서·엑셀은 버튼 한 번
 - **REST API 재구현** — 정산 핵심을 NestJS + TypeORM으로 다시 작성([`tutorpay-api-nest`](https://github.com/vittroi384/tutorpay-api-nest)). DTO 검증·공통 오류 봉투·OpenAPI 문서, 월 정산 잠금은 `pg_advisory_xact_lock`으로 강의 쓰기와 직렬화, 감사 로그는 본 데이터와 같은 트랜잭션에 기록. 단위 32건 · e2e 13건(실제 PostgreSQL) · ADR 3편
 - **Stack**: `Next.js 15` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL` `Docker` `Caddy` `AWS`
-- 단독 설계·개발·운영 · 저장소: [`tutor-pay`](https://github.com/vittroi384/tutor-pay)
+- 설계·개발·운영 · 저장소: [`tutor-pay`](https://github.com/vittroi384/tutor-pay)
 
 <br/>
 
@@ -72,7 +72,7 @@
 - **행사 운영 결과**: 축전 당일 **참여 약 8,000명(추정) · 도장 6,250건 · 운영 만족도 96%**, 피크 분당 49건을 장애 없이 처리. 같은 날 별도 서버로 소규모 부스 행사(참여 약 1,100명)도 함께 운영
 - **검증**: Playwright 테스트 12벌 · 폭주 테스트 800명 동시 에러 0 · **지속 테스트 2회(초당 6명 × 15분 = 35,314 요청) 에러 0, p95 73ms** (Supabase 무료 플랜)
 - **Stack**: `Vanilla JS (단일 HTML)` `Supabase (Postgres · PostgREST · RPC · RLS)` `Vercel` `Playwright` · 운영비 0원
-- 단독 설계·개발·테스트·배포 · 저장소: [`wonju-stamp-rally`](https://github.com/vittroi384/wonju-stamp-rally) *(부스·기관명은 더미 데이터)*
+- 설계·개발·테스트·배포 · 저장소: [`wonju-stamp-rally`](https://github.com/vittroi384/wonju-stamp-rally) *(부스·기관명은 더미 데이터)*
 
 <br/>
 
@@ -87,7 +87,7 @@
 - **분석·운영** — 관리자 통계(언어·페이지·종류별 저장, 선택→미리보기→저장 퍼널; 개인정보 없는 카운터), 입력 기록 자동 분류(도메인·플랫폼·방문자 언어)·요약, **Umami 자체 호스팅**(쿠키 없음 → 동의 배너 불필요, 대시보드는 SSH 터널로만·공개 경로는 추적 스크립트 2개뿐), 브라우저 오류 수집, 로그 로테이션
 - **검증** — 리뷰 8회(도구 리뷰 포함, 지적 → 수정 → 통과) + 공개 후 보안 점검 6항목 대응, 단위 177건 + Playwright E2E 40건(a11y 포함), GitHub Actions CI(lint·types·tests·build → E2E+Postgres → Docker), ADR 9편
 - **Stack**: `Next.js 16` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL 16` `Umami` `Docker` `Caddy` `Oracle Cloud` `GitHub Actions`
-- 단독 설계·개발·배포 · 저장소: [`qr-web`](https://github.com/vittroi384/qr-web)
+- 설계·개발·배포 · 저장소: [`qr-web`](https://github.com/vittroi384/qr-web)
 
 <br/>
 
@@ -102,7 +102,7 @@
 - **관측성** — 관계형 DB 없이 통계 → VictoriaMetrics, 브라우저 오류 → VictoriaLogs. 알림 규칙 11개 + Watchdog(SLO 오류 예산 소진 속도, 1분 합성 감시), Grafana 대시보드 5개를 코드로 관리
 - **검증** — 단위 243건 · Playwright E2E 250건(4엔진, axe 접근성 WCAG 2.2 AA, 시각 회귀) · 운영 경로 31항목. CI에서 compose 스택을 띄워 통계 → 지표 → 알림 경로까지 시험, 첫 화면 JS gzip 90KB 예산 강제
 - **Stack**: `React 19` `Vite` `TypeScript` `WebAssembly` `Fastify` `VictoriaMetrics` `Alertmanager` `Grafana` `Docker` `nginx` `Oracle Cloud` `GitHub Actions`
-- 단독 설계·개발·배포 · 저장소: [`file-converter`](https://github.com/vittroi384/file-converter)
+- 설계·개발·배포 · 저장소: [`file-converter`](https://github.com/vittroi384/file-converter)
 
 <br/>
 
@@ -115,7 +115,7 @@
 - **동기화 계획/실행 분리** — 재동기화·되돌리기·가져오기는 먼저 변경 계획(추가·수정·삭제)을 만든 뒤 실행. 담당자가 수정한 끼니는 수동 보호로 자동 동기화가 덮어쓰지 않음
 - **접속 잠금** — 비밀번호 해시(SHA-256 + salt)·세션 토큰, "설정 탭만 잠금" / "전체 잠금" 모드. 비밀값은 Script Properties에만 저장
 - **Stack**: `Google Apps Script` `Google Sheets` `NEIS Open API` `HtmlService` `node:test`
-- 단독 설계·개발·배포 · 저장소: [`meal-allergen-checker`](https://github.com/vittroi384/meal-allergen-checker) *(스크린샷은 가상 데이터)*
+- 설계·개발·배포 · 저장소: [`meal-allergen-checker`](https://github.com/vittroi384/meal-allergen-checker) *(스크린샷은 가상 데이터)*
 
 <br/>
 
@@ -129,7 +129,7 @@
 - **엔지니어링**: ADR 12편 · Firestore(대화 저장) · pytest · ruff · mypy · Cloud Run/IAP/Secret Manager 배포
 - **검증**: 답변마다 근거 문서 링크 제시. 개발 단계 휴먼 평가로 시스템 프롬프트 규칙과 검증 단계를 다듬어 정확도를 높임. 골든셋 20문항과 지표 4종(Recall@5·답변 정확도·grounded 일치율·negative 거부율) 정의, 수치 측정은 다음 단계
 - **Stack**: `FastAPI` `Python 3.11 (async)` `Vertex AI` `Gemini` `Firestore` `Docker` `Cloud Run`
-- 단독 설계·개발 · 저장소: [`drive-chatbot`](https://github.com/vittroi384/drive-chatbot)
+- 설계·개발 · 저장소: [`drive-chatbot`](https://github.com/vittroi384/drive-chatbot)
 
 <br/>
 
@@ -140,7 +140,7 @@
 - 6개 공공 Open API 6시간 주기 호출, 장애 시 트랙별 격리 + exponential backoff 재시도
 - 기관별 상이한 필드·날짜 포맷을 **단일 스키마로 정규화**, 키워드 필터 + 카테고리 자동 태깅
 - Batch Insert 일괄 적재 · 자격증명 분리 · Lock 으로 중복 실행 방지 · 90일 자동 정리
-- **Stack**: `Google Apps Script` `Google Sheets` `Looker Studio` `REST API` · 단독 기획·개발·운영 · 비공개 *(요청 시 공유)*
+- **Stack**: `Google Apps Script` `Google Sheets` `Looker Studio` `REST API` · 기획·개발·운영 · 비공개 *(요청 시 공유)*
 
 <br/>
 
@@ -161,7 +161,7 @@
 - 멱등 수집(UPSERT) · 지표 변환(MA·RSI·볼린저·일목) · 품질검사(결측·신선도) 이상 시 텔레그램 알림
 - 각 단계를 실무 도구와 1:1 매핑 설계 — 오케스트레이터↔Airflow, 변환↔dbt, 품질검사↔Great Expectations
 - 웹 대시보드(Flask) · systemd · GitHub Actions CI
-- **Stack**: `Python` `SQLite` `pandas` `matplotlib` `Flask` · 단독 설계·개발 · 저장소: [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot)
+- **Stack**: `Python` `SQLite` `pandas` `matplotlib` `Flask` · 설계·개발 · 저장소: [`btc-trading-bot`](https://github.com/vittroi384/btc-trading-bot)
 
 ---
 
