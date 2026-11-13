@@ -3,7 +3,7 @@
 # 안녕하세요, 개발자 전학수입니다
 
 **실무의 불편에서 출발해, 설계부터 배포·운영까지 끝까지 책임지는 시스템을 만듭니다.**
-데이터 파이프라인 · 백엔드(FastAPI · Next.js · Spring) · 클라우드(AWS · GCP)를 넘나들며, 실제로 사용되는 도구를 만드는 것을 좋아합니다.
+데이터 파이프라인 · 백엔드(FastAPI · NestJS · Next.js · Spring) · 클라우드(AWS · GCP)를 넘나들며, 실제로 사용되는 도구를 만드는 것을 좋아합니다.
 
 </div>
 
@@ -14,7 +14,7 @@
 - **문제 → 시스템**: 수작업으로 굴러가던 업무(강사 정산, 공고 검색, 문서 검색, 행사 부스 체험 확인)를 실사용 시스템으로 바꿔 왔습니다. 지금도 회사와 실사용자들이 쓰고 있습니다.
 - **운영을 의식한 엔지니어링**: 멱등 적재(UPSERT) · 트랜잭션 경계 · 데이터 품질 검증 · 금액 스냅샷 · 감사 로그. 재시도·락은 사내 ETL(비공개)에서.
 - 설계 결정을 기록합니다: 주요 아키텍처 결정은 ADR로 남기고, 순수 로직은 분리해서 테스트 가능하게 유지합니다. v1 → v2 → v3 점진적 고도화.
-- **클라우드**: AWS(EC2 · S3)와 GCP(Cloud Run · Vertex AI · Firestore), Oracle Cloud에 직접 배포·운영합니다.
+- **클라우드**: AWS(EC2 · S3)와 GCP(Cloud Run · Vertex AI · Firestore), Oracle Cloud에 직접 배포하고, 지표·로그·알림(VictoriaMetrics · Alertmanager · Grafana)으로 운영합니다.
 
 ---
 
@@ -31,13 +31,16 @@
 **Backend & Frontend**
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
 
 **Infra**
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
 ---
@@ -52,6 +55,7 @@
 - **급여 규칙의 마이그레이션화** — 요율 개편(차시 구간·지역 특례)을 SQL 마이그레이션으로 추적
 - **시트 → DB 이전 파이프라인** — 추출 스크립트가 시트 캐시값과 재계산 값을 대조해 불일치 자동 검증
 - **검증**: 시트 558건 재계산 대조 불일치 0, 명세서·엑셀은 버튼 한 번
+- **REST API 재구현** — 정산 핵심을 NestJS + TypeORM으로 다시 작성([`tutorpay-api-nest`](https://github.com/vittroi384/tutorpay-api-nest)). DTO 검증·공통 오류 봉투·OpenAPI 문서, 월 정산 잠금은 `pg_advisory_xact_lock`으로 강의 쓰기와 직렬화, 감사 로그는 본 데이터와 같은 트랜잭션에 기록. 단위 32건 · e2e 13건(실제 PostgreSQL) · ADR 3편
 - **Stack**: `Next.js 15` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL` `Docker` `Caddy` `AWS`
 - 단독 설계·개발·운영 · 저장소: [`tutor-pay`](https://github.com/vittroi384/tutor-pay)
 
@@ -84,6 +88,21 @@
 - **검증** — 리뷰 8회(도구 리뷰 포함, 지적 → 수정 → 통과) + 공개 후 보안 점검 6항목 대응, 단위 177건 + Playwright E2E 40건(a11y 포함), GitHub Actions CI(lint·types·tests·build → E2E+Postgres → Docker), ADR 9편
 - **Stack**: `Next.js 16` `React 19` `TypeScript` `Drizzle ORM` `PostgreSQL 16` `Umami` `Docker` `Caddy` `Oracle Cloud` `GitHub Actions`
 - 단독 설계·개발·배포 · 저장소: [`qr-web`](https://github.com/vittroi384/qr-web)
+
+<br/>
+
+### LocalConvert — 파일을 서버로 보내지 않는 브라우저 변환기 *(10개 언어 공개 서비스, 2026.11 공개)*
+
+> 사진·PDF·엑셀·영상을 **업로드 없이 브라우저 안(Web Worker + WebAssembly)에서** 변환하는 웹서비스. 서버는 페이지와 익명 통계(형식·크기·처리 시간)만 받고, CSP `connect-src 'self'`로 파일이 다른 서버로 나갈 경로 자체를 차단. 10개 언어, **SSG 280페이지 + 스트리밍 SSR** 하이브리드 렌더링. 광고·회원가입 없음.
+
+- **업로드 없음을 구조로 보장** — 개인정보를 약속이 아니라 구조로. 브라우저 안에서 정확히 만들 수 없는 변환(오피스·한글 → PDF)은 지원하지 않음
+- **스마트 압축** — 고정 품질값 대신 목표 화질(SSIM)을 넘는 가장 작은 파일을 탐색. Kodak 22장 × 품질 1\~100 정답표로 탐색 방식을 비교해 평균 시도 7.7회 → 2.4\~4.2회, 손해 0%
+- **워커 풀 = 객체 풀 + 격벽 + 입장 제어** — 파일 머리(256KB)만 읽어 예상 메모리를 계산하고 기기 예산 안에서만 동시 실행, 한 작업이 죽어도 그 워커만 교체. 변환기는 플러그인 계약(작업 하나 = 명세 하나)으로 등록하고 계약 테스트가 모든 선택지 조합을 검사
+- **하이브리드 렌더링** — 주요 페이지는 빌드 시 SSG로 크롤러가 JS 없이 본문을 읽고, 수천 개 롱테일 조합은 요청 시 스트리밍 SSR + nginx 캐시. SSR이 죽어도 캐시·정적 404로 동작
+- **관측성** — 관계형 DB 없이 통계 → VictoriaMetrics, 브라우저 오류 → VictoriaLogs. 알림 규칙 11개 + Watchdog(SLO 오류 예산 소진 속도, 1분 합성 감시), Grafana 대시보드 5개를 코드로 관리
+- **검증** — 단위 243건 · Playwright E2E 250건(4엔진, axe 접근성 WCAG 2.2 AA, 시각 회귀) · 운영 경로 31항목. CI에서 compose 스택을 띄워 통계 → 지표 → 알림 경로까지 시험, 첫 화면 JS gzip 90KB 예산 강제
+- **Stack**: `React 19` `Vite` `TypeScript` `WebAssembly` `Fastify` `VictoriaMetrics` `Alertmanager` `Grafana` `Docker` `nginx` `Oracle Cloud` `GitHub Actions`
+- 단독 설계·개발·배포 · 저장소: [`file-converter`](https://github.com/vittroi384/file-converter)
 
 <br/>
 
@@ -151,6 +170,7 @@
 | 프로젝트 | 설명 |
 |---|---|
 | [`fine`](https://github.com/vittroi384/fine) | 벌금형 소셜 습관 챌린지 앱 MVP — Expo(React Native) + Supabase(RLS·Edge Functions·pg_cron), 스펙 문서·SQL 테스트 포함 |
+| [`script-to-speech`](https://github.com/vittroi384/script-to-speech) | 대본 txt의 각 줄을 순서대로 mp3로 만드는 데스크톱 TTS 도구 — edge-tts 무료판 / ElevenLabs 유료판, 이어하기·재시도·작업 스레드 분리 |
 | [`file-auto-sort`](https://github.com/vittroi384/file-auto-sort) | 폴더 실시간 감시 파일 자동 분류 Windows 트레이 유틸 — 연습 모드·되돌리기 등 안전장치 우선 |
 | [`oci-arm-grab`](https://github.com/vittroi384/oci-arm-grab) | 클라우드 무료 인스턴스 확보 자동 재시도 GitHub Actions 워크플로 |
 
