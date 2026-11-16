@@ -13,7 +13,7 @@
 
 | | |
 |---|---|
-| **실사용 시스템** | 사내: 강사 정산(TutorPay) · 입찰공고 ETL · 문서 RAG 챗봇 / 학교: 급식 알레르기 판별(1개교) |
+| **실사용 시스템** | 사내: 강사 정산(TutorPay, 강의 1,016건) · 입찰공고 ETL · 문서 RAG 챗봇 / 학교: 급식 알레르기 판별(1개교) |
 | **행사 운영** | 교육청 축전 스탬프 랠리 — 참여 약 6,100~8,100명(추정) · 도장 6,250건 · 장애 없이 운영 |
 | **공개 서비스** | GetQRMaker([getqrmaker.com](https://getqrmaker.com)) · LocalConvert([convert.getqrmaker.com](https://convert.getqrmaker.com)) — 10개 언어 |
 | **검증 습관** | 시트 558건 재계산 대조 불일치 0 · 지속 테스트 35,314 요청 에러 0 · 설계 결정은 ADR로 기록 |
@@ -37,7 +37,7 @@
 구글 시트로 관리하던 강사 100여 명, 연 수백 건 강의의 배정·단가 계산·월별 정산을 웹앱으로 옮겼습니다.
 
 - **금액 스냅샷**: 단가표가 바뀌어도 확정된 강의 금액은 그대로. 단가표는 시행일 기준 버전 테이블로 관리
-- **시트 → DB 이전 검증**: 시트 값과 재계산 값을 대조하는 추출 스크립트, 558건 불일치 0
+- **시트 → DB 이전 검증**: 시트 값과 재계산 값을 대조하는 추출 스크립트, 558건 불일치 0 → 이후 강의 1,016건 운영 중(2026.11 기준)
 - **NestJS 재구현**: 정산 핵심을 REST API로 다시 작성. 월 정산 잠금은 advisory lock으로 직렬화, 감사 로그는 같은 트랜잭션에 기록 (단위 32 · e2e 13 · ADR 3)
 - **Stack**: `Next.js 15` `TypeScript` `Drizzle ORM` `PostgreSQL` `NestJS` `TypeORM` `Docker` `AWS`
 - 저장소: [`tutor-pay`](https://github.com/vittroi384/tutor-pay) · [`tutorpay-api-nest`](https://github.com/vittroi384/tutorpay-api-nest)
