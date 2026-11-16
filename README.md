@@ -59,7 +59,7 @@ URL·Wi-Fi·연락처·결제 링크 등 17종을 정적 QR로 만드는 10개 �
 
 - **정적 QR 원칙**: QR에 사용자 내용만 담아 서버가 멈춰도 인쇄물은 계속 동작 (ADR로 기록)
 - **관리자 3중 잠금**: 비밀 입구 URL + TOTP 직접 구현 + IP 허용목록
-- **검증**: 단위 177 · Playwright E2E 40 · GitHub Actions CI · ADR 9
+- **검증**: 단위 194 · Playwright E2E 44 · GitHub Actions CI · ADR 9
 - **Stack**: `Next.js 16` `TypeScript` `Drizzle ORM` `PostgreSQL` `Docker` `Caddy` `Oracle Cloud`
 - 저장소: [`qr-web`](https://github.com/vittroi384/qr-web)
 
