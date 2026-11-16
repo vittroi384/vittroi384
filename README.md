@@ -14,7 +14,7 @@
 | | |
 |---|---|
 | **실사용 시스템** | 사내: 강사 정산(TutorPay) · 입찰공고 ETL · 문서 RAG 챗봇 / 학교: 급식 알레르기 판별(1개교) |
-| **행사 운영** | 교육청 축전 스탬프 랠리 — 참여 약 8,000명(추정) · 도장 6,250건 · 장애 없이 운영 |
+| **행사 운영** | 교육청 축전 스탬프 랠리 — 참여 약 6,100~8,100명(추정) · 도장 6,250건 · 장애 없이 운영 |
 | **공개 서비스** | GetQRMaker([getqrmaker.com](https://getqrmaker.com)) · LocalConvert([convert.getqrmaker.com](https://convert.getqrmaker.com)) — 10개 언어 |
 | **검증 습관** | 시트 558건 재계산 대조 불일치 0 · 지속 테스트 35,314 요청 에러 0 · 설계 결정은 ADR로 기록 |
 
@@ -48,7 +48,7 @@
 
 - **권한 모델**: 로그인 없이 anon 키 하나. 개인정보 테이블은 RLS로 막고 security definer RPC로만 접근
 - **치팅 방지는 서버에서**: QR마다 비밀 토큰, 같은 사람 도장 간격 90초
-- **결과**: 참여 약 8,000명(추정) · 도장 6,250건 · 피크 분당 49건을 장애 없이 처리 · 운영 만족도 96%
+- **결과**: 참여 약 6,100~8,100명(추정) · 도장 6,250건 · 피크 분당 49건을 장애 없이 처리 · 운영 만족도 96%
 - **검증**: 행사 전 재현 테스트로 42건 수정 · 지속 테스트 35,314 요청 에러 0, p95 73ms
 - **Stack**: `Vanilla JS` `Supabase (Postgres · RPC · RLS)` `Vercel` `Playwright`
 - 저장소: [`wonju-stamp-rally`](https://github.com/vittroi384/wonju-stamp-rally)
